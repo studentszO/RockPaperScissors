@@ -29,19 +29,17 @@ function getHumanChoice() {
         return console.log("WRONG! Yout choice must be rock,paperor scissors")
 }
 
-// CREATE function humanScore
-function humanScore() {
-    // CREATE an INTEGER & INITIALISE it to 0
-    let score = 0;
+
+    // CREATE aVARIABLE humanScore & INITIALISE it to 0
+    let humanScore = 0;
+    // CREATE a VARIABLE computerScore & INITIALISE it to 0
+    let computerScore = 0;
 }
 
-// CREATE function computerScore
-function computerScore() {
-    // CREATE an INTEGER & INITIALISE it to 0
-    let score = 0;
+// CREATE function playRound with two parameters
+function playRound(humanChoice, computerChoice) {
+
 }
 
-
-    
 getComputerChoice()
 getHumanChoice()
