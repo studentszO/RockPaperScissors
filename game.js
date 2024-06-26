@@ -37,18 +37,30 @@ function playRound(humanChoice, computerChoice) {
     // IF humanChoice != computerChoice
     else 
     // IF iterations for every choice with console.logs
-        if (humanChoice === "rock" && computerChoice === "paper")
+        if (humanChoice === "rock" && computerChoice === "paper") {
             console.log("YOU LOSE! Paper beats Rock.")
-        if (humanChoice === "rock" && computerChoice === "scissors")
+            computerScore++;
+        }
+        if (humanChoice === "rock" && computerChoice === "scissors") {
             console.log("YOU WIN! Rock beats Scissors.")
-        if (humanChoice === "scissors" && computerChoice === "rock")
+            humanScore++;
+        }
+        if (humanChoice === "scissors" && computerChoice === "rock") {
             console.log("YOU LOSE! Rock beats Scissors.")
-        if (humanChoice === "scissors" && computerChoice === "paper")
+            computerScore++;
+        }
+        if (humanChoice === "scissors" && computerChoice === "paper") {
             console.log("YOU WIN! Scissors beats Paper.")
-        if (humanChoice === "paper" && computerChoice === "rock")
+            humanScore++;
+        }
+        if (humanChoice === "paper" && computerChoice === "rock") {
             console.log("YOU WIN! Paper beats Rock.")
-        if (humanChoice === "paper" && computerChoice == "scissors")
+            humanScore++;
+        }
+        if (humanChoice === "paper" && computerChoice == "scissors") {
             console.log("YOU LOSE! Scissors beats Paper")
+            computerScore++;
+        }
 }
 
 // CREATE a VARIABLE humanScore & INITIALISE it to 0
