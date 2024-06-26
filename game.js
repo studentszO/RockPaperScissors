@@ -28,40 +28,7 @@ function getHumanChoice() {
         return alert("WRONG! Your choice must be rock, paper or scissors")
 }
 
-// CREATE function playRound with two parameters
-function playRound(humanChoice, computerChoice) {
-    // IF humanChoice is the same as computerChoice
-    if (humanChoice === computerChoice)
-        // RETURN log: It's a draw.
-        return console.log("It's a draw!")
-    // IF humanChoice != computerChoice
-    else 
-    // IF iterations for every choice with console.logs
-        if (humanChoice === "rock" && computerChoice === "paper") {
-            console.log("YOU LOSE! Paper beats Rock.")
-            computerScore++;
-        }
-        if (humanChoice === "rock" && computerChoice === "scissors") {
-            console.log("YOU WIN! Rock beats Scissors.")
-            humanScore++;
-        }
-        if (humanChoice === "scissors" && computerChoice === "rock") {
-            console.log("YOU LOSE! Rock beats Scissors.")
-            computerScore++;
-        }
-        if (humanChoice === "scissors" && computerChoice === "paper") {
-            console.log("YOU WIN! Scissors beats Paper.")
-            humanScore++;
-        }
-        if (humanChoice === "paper" && computerChoice === "rock") {
-            console.log("YOU WIN! Paper beats Rock.")
-            humanScore++;
-        }
-        if (humanChoice === "paper" && computerChoice == "scissors") {
-            console.log("YOU LOSE! Scissors beats Paper")
-            computerScore++;
-        }
-}
+
 
 // CREATE a VARIABLE humanScore & INITIALISE it to 0
 let humanScore = 0;
@@ -73,5 +40,48 @@ const humanSelection = getHumanChoice()
 const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
+
+// CREATE function playGame
+function playGame() {
+    // CREATE a VARIABLE humanScore & INITIALISE it to 0
+    let humanScore = 0;
+    // CREATE a VARIABLE computerScore & INITIALISE it to 0
+    let computerScore = 0;
+
+    // CREATE function playRound with two parameters
+    function playRound(humanChoice, computerChoice) {
+        // IF humanChoice is the same as computerChoice
+        if (humanChoice === computerChoice)
+            // RETURN log: It's a draw.
+            return console.log("It's a draw!")
+        // IF humanChoice != computerChoice
+        else 
+        // IF iterations for every choice with console.logs
+            if (humanChoice === "rock" && computerChoice === "paper") {
+                console.log("YOU LOSE! Paper beats Rock.")
+                computerScore++;
+            }
+            if (humanChoice === "rock" && computerChoice === "scissors") {
+                console.log("YOU WIN! Rock beats Scissors.")
+                humanScore++;
+            }
+            if (humanChoice === "scissors" && computerChoice === "rock") {
+                console.log("YOU LOSE! Rock beats Scissors.")
+                computerScore++;
+            }
+            if (humanChoice === "scissors" && computerChoice === "paper") {
+                console.log("YOU WIN! Scissors beats Paper.")
+                humanScore++;
+            }
+            if (humanChoice === "paper" && computerChoice === "rock") {
+                console.log("YOU WIN! Paper beats Rock.")
+                humanScore++;
+            }
+            if (humanChoice === "paper" && computerChoice == "scissors") {
+                console.log("YOU LOSE! Scissors beats Paper")
+                computerScore++;
+            }
+    }
+}
 
 console.log(humanScore, computerScore, humanSelection, computerSelection)
