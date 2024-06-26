@@ -39,54 +39,55 @@ function playGame() {
 
     // CREATE function playRound with two parameters
     function playRound(humanChoice, computerChoice) {
-        // IF humanChoice is the same as computerChoice
-        if (humanChoice === computerChoice) {
-            // RETURN log: It's a draw.
-            return console.log("It's a draw!")
-        }
-        // IF humanChoice != computerChoice
-        else {
             // IF iterations for every choice with console.logs
             if (humanChoice === "rock" && computerChoice === "paper") {
-                    console.log("YOU LOSE! Paper beats Rock.")
-                    return computerScore++;
-                }
-                if (humanChoice === "rock" && computerChoice === "scissors") {
-                    console.log("YOU WIN! Rock beats Scissors.")
-                    return humanScore++;
-                }
-                if (humanChoice === "scissors" && computerChoice === "rock") {
-                    console.log("YOU LOSE! Rock beats Scissors.")
-                    return computerScore++;
-                }
-                if (humanChoice === "scissors" && computerChoice === "paper") {
-                    console.log("YOU WIN! Scissors beats Paper.")
-                    return humanScore++;
-                }
-                if (humanChoice === "paper" && computerChoice === "rock") {
-                    console.log("YOU WIN! Paper beats Rock.")
-                    return humanScore++;
-                }
-                if (humanChoice === "paper" && computerChoice == "scissors") {
-                    console.log("YOU LOSE! Scissors beats Paper")
-                    return computerScore++;
-                }
-        }
+                console.log("YOU LOSE! Paper beats Rock.")
+                return computerScore++;
+            }
+            if (humanChoice === "rock" && computerChoice === "scissors") {
+                console.log("YOU WIN! Rock beats Scissors.")
+                return humanScore++;
+            }
+            if (humanChoice === "scissors" && computerChoice === "rock") {
+                console.log("YOU LOSE! Rock beats Scissors.")
+                return computerScore++;
+            }
+            if (humanChoice === "scissors" && computerChoice === "paper") {
+                console.log("YOU WIN! Scissors beats Paper.")
+                return humanScore++;
+            }
+            if (humanChoice === "paper" && computerChoice === "rock") {
+                console.log("YOU WIN! Paper beats Rock.")
+                return humanScore++;
+            }
+            if (humanChoice === "paper" && computerChoice == "scissors") {
+                console.log("YOU LOSE! Scissors beats Paper")
+                return computerScore++;
+            }
     }
 
     // Loop 5 times the playGame to play for 5 rounds
     for (round = 0; round < 5; round++) {
+        // GET each's choice
         humanSelection = getHumanChoice();
         computerSelection = getComputerChoice();
+        // IF there is a draw, don't count the round
+        if (computerSelection === humanSelection) {
+            console.log("THIS IS A DRAW")
+            round--;
+        }
+        // CALL playRound function to play a round
         playRound(humanSelection, computerSelection);
+
         console.log(humanScore, computerScore, humanSelection, computerSelection)
     }
 
+    // LOG in the console who the winner is
     if (humanScore > computerScore) {
-        return console.log("YOU WIN!")
+        return console.log("YOU WIN THE GAME!")
     }
     else {
-        return console.log("YOU LOSE!")
+        return console.log("YOU LOSE THE GAME!")
     }
 }
 
@@ -94,6 +95,7 @@ function playGame() {
 let humanSelection;
 let computerSelection;
 
+// CALL the function playGame to PLAY !
 playGame();
 
 // console.log(humanScore, computerScore, humanSelection, computerSelection)
