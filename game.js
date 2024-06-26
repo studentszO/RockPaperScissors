@@ -19,15 +19,29 @@ else
 // CREATE function getHumanChoice
 function getHumanChoice() {
     // GET an input from the user
-    let choice = prompt("What choice do you want to make ?");
+    let choice = prompt("What choice do you want to make ?").toLowerCase();
     // IF choice equals one of rock, paper or scissors
-    if (random_number <= 0.33)
+    if (choice === "rock" || choice === "paper" || choice === "scissors")
         // return user's choice
-        return console.log("Rock")
+        return console.log(choice)
     // ELSE return error: this choice does not work, try R, P or S.
     else
-        return console.log("Paper")
+        return console.log("WRONG! Yout choice must be rock,paperor scissors")
 }
+
+// CREATE function humanScore
+function humanScore() {
+    // CREATE an INTEGER & INITIALISE it to 0
+    let score = 0;
+}
+
+// CREATE function computerScore
+function computerScore() {
+    // CREATE an INTEGER & INITIALISE it to 0
+    let score = 0;
+}
+
 
     
 getComputerChoice()
+getHumanChoice()
