@@ -9,16 +9,11 @@ function getComputerChoice() {
         return "paper"
 }
 
-let humanSelection;
-let computerSelection;
-
 let humanScore = 0;
 let computerScore = 0;
 
 const whoWonDiv = document.querySelector("#whoWon");
 const scores = document.querySelector("#scores");
-
-
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "paper") {
@@ -44,6 +39,9 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "paper" && computerChoice == "scissors") {
         whoWonDiv.textContent = "YOU LOSE! Scissors beats Paper";
         return computerScore++;
+    }
+    if (humanChoice === computerChoice) {
+        whoWonDiv.textContent = "IT'S A DRAW! CHOOSE AGAIN!";
     }
 }
 
