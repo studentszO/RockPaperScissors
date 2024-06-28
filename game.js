@@ -62,8 +62,11 @@ choices.addEventListener("click", (e) => {
             playRound("scissors", getComputerChoice());
             break;
     };
-
     scores.lastElementChild.textContent = "Computer score: " + computerScore;
     scores.firstElementChild.textContent = "Your score: " + humanScore;
-
 });
+
+    if (humanScore === 5)
+        whoWonDiv.textContent = "YOU WIN THE GAME! CONGRATS!";        
+    if (computerScore === 5)
+        whoWonDiv.textContent = "THE COMPUTER WIN THE GAME! YOU LOSE!";        
