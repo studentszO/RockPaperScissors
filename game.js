@@ -15,7 +15,10 @@ let computerSelection;
 let humanScore = 0;
 let computerScore = 0;
 
-const whoWonDiv = document.querySelector("#whoWon")
+const whoWonDiv = document.querySelector("#whoWon");
+const scores = document.querySelector("#scores");
+
+
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "paper") {
@@ -61,4 +64,8 @@ choices.addEventListener("click", (e) => {
             playRound("scissors", getComputerChoice());
             break;
     };
+
+    scores.lastElementChild.textContent = "Computer score: " + computerScore;
+    scores.firstElementChild.textContent = "Your score: " + humanScore;
+
 });
