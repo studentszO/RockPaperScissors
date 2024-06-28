@@ -15,29 +15,31 @@ let computerSelection;
 let humanScore = 0;
 let computerScore = 0;
 
+const whoWonDiv = document.querySelector("#whoWon")
+
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("YOU LOSE! Paper beats Rock.")
+        whoWonDiv.textContent = "YOU LOSE! Paper beats Rock.";
         return computerScore++;
     }
     if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("YOU WIN! Rock beats Scissors.")
+        whoWonDiv.textContent = "YOU WIN! Rock beats Scissors.";
         return humanScore++;
     }
     if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("YOU LOSE! Rock beats Scissors.")
+        whoWonDiv.textContent = "YOU LOSE! Rock beats Scissors.";
         return computerScore++;
     }
     if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("YOU WIN! Scissors beats Paper.")
+        whoWonDiv.textContent = "YOU WIN! Scissors beats Paper.";
         return humanScore++;
     }
     if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("YOU WIN! Paper beats Rock.")
+        whoWonDiv.textContent = "YOU WIN! Paper beats Rock.";
         return humanScore++;
     }
     if (humanChoice === "paper" && computerChoice == "scissors") {
-        console.log("YOU LOSE! Scissors beats Paper")
+        whoWonDiv.textContent = "YOU LOSE! Scissors beats Paper";
         return computerScore++;
     }
 }
